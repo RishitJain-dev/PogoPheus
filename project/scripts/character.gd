@@ -5,7 +5,10 @@ extends CharacterBody2D
 @export var mass: int = 5
 @export var movement_speed: float = 40
 @export var max_speed: float = 900
+@export var progress_bar: Control
 
+var jump_charge_progress: int = 0
+signal physics_processed
 
 func is_positive(num: int) ->bool:
 	return num >= 0
@@ -22,6 +25,11 @@ func _physics_process(delta: float) -> void:
 			var upward_force = spring_constant * absi((vertical_distance_to_obstacle-spring_length)) #compression
 			var acceleration = cos(rotation)*upward_force/mass
 			velocity.y -= acceleration
+
+		# emergency-check
+			#if abs(vertical_distance_to_obstacle-spring_length) < 0.1:
+				#velocity.y = -5
+		
 	velocity.y += 9.81 # gravity
 	
 	# x axis
@@ -39,8 +47,23 @@ func _physics_process(delta: float) -> void:
 	velocity.x = sin(rotation) * 400 * delta * movement_speed
 	if absi(velocity.x) >= 50:
 		velocity.x = move_toward(velocity.x, 0, 5)
-	if velocity.x > 150:
-		velocity.x = 150
+	if velocity.x > max_speed:
+		velocity.x = max_speed
+		
+	if Input.is_action_pressed("space"):
+		jump_charge_progress += 1
+	else:
+		jump_charge_progress -= 3
+		if jump_charge_progress < 0:
+			jump_charge_progress = 0
+	progress_bar.set_value(jump_charge_progress)
+	
+	if is_positive(velocity.y) != is_positive(velocity_initial): #changing from moving down to up
+		if !Input.is_action_pressed("space") and jump_charge_progress!=0:
+			velocity.y *= sqrt(1.5*jump_charge_progress)
+	
+	
+
 	#if velocity.x >= 0:
 		#velocity.x = velocity.x / 1.5
 		#velocity.x += control * movement_speed
@@ -52,3 +75,4 @@ func _physics_process(delta: float) -> void:
 		#if velocity.x < -max_speed:
 			#velocity.x = -max_speed
 	move_and_slide()
+	physics_processed.emit()
