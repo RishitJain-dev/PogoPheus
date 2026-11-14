@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkmobmaj0041u"
-path="res://.godot/imported/breakingblockplaceholder.png-78fa1d1960e7759abd9bd60f655caec3.ctex"
+uid="uid://d1e7dn4bvlq4t"
+path="res://.godot/imported/frame_09.png-cfbf6ed0ab571799fbb1bac99f33c7b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://breakingblockplaceholder.png"
-dest_files=["res://.godot/imported/breakingblockplaceholder.png-78fa1d1960e7759abd9bd60f655caec3.ctex"]
+source_file="res://Lava/frames/frame_09.png"
+dest_files=["res://.godot/imported/frame_09.png-cfbf6ed0ab571799fbb1bac99f33c7b0.ctex"]
 
 [params]
 
