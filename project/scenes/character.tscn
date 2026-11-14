@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://4yjxbsgt8ehn" path="res://scripts/character.gd" id="1_agfs1"]
 [ext_resource type="Texture2D" uid="uid://ceute6cj26cp1" path="res://assets/orph.png" id="2_rkhd4"]
+[ext_resource type="Texture2D" uid="uid://cv2msl73b2hxh" path="res://assets/spring.png" id="3_lrhn5"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_suija"]
 
@@ -19,6 +20,7 @@ script = ExtResource("1_agfs1")
 movement_speed = 80.0
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1926429057]
+visible = false
 material = SubResource("CanvasItemMaterial_suija")
 position = Vector2(0, 20)
 texture = SubResource("GradientTexture2D_lwexw")
@@ -27,6 +29,12 @@ texture = SubResource("GradientTexture2D_lwexw")
 position = Vector2(0, -100)
 scale = Vector2(6, 6)
 texture = ExtResource("2_rkhd4")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1091826253]
+material = SubResource("CanvasItemMaterial_suija")
+position = Vector2(-11, -112)
+scale = Vector2(10, 10)
+texture = ExtResource("3_lrhn5")
 
 [node name="CharacterCollisionBox" type="CollisionPolygon2D" parent="." unique_id=446865143]
 position = Vector2(-4, -118.5)

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dxon0mk8dgivo"]
 
 [ext_resource type="PackedScene" uid="uid://dqojtyf4in0y3" path="res://scenes/character.tscn" id="1_2q6dc"]
+[ext_resource type="PackedScene" uid="uid://7rpj3fsrkwky" path="res://scenes/ui/jump-charge.tscn" id="1_w7c3h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xcss6"]
 size = Vector2(1681, 134)
@@ -9,9 +10,20 @@ size = Vector2(1681, 134)
 
 [node name="Node2D" type="Node2D" unique_id=595287875]
 
-[node name="Character" parent="." unique_id=261713197 instance=ExtResource("1_2q6dc")]
+[node name="ProgressBar" parent="." unique_id=519357473 instance=ExtResource("1_w7c3h")]
+custom_minimum_size = Vector2(1152, 648)
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Character" parent="." unique_id=261713197 node_paths=PackedStringArray("progress_bar") instance=ExtResource("1_2q6dc")]
 position = Vector2(451, 101)
-spring_constant = 300
+spring_constant = 100
+mass = 60
+movement_speed = 500.0
+max_speed = 1000.0
+progress_bar = NodePath("../ProgressBar")
 
 [node name="CollisionShape2D" type="StaticBody2D" parent="." unique_id=1048205445]
 
@@ -34,3 +46,7 @@ position = Vector2(547.5, 727)
 rotation = 2.7925267
 scale = Vector2(3.3183594, 1)
 texture = SubResource("NoiseTexture2D_xcss6")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=184645750]
+position = Vector2(207, 187)
+zoom = Vector2(0.5, 0.5)
