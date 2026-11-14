@@ -13,6 +13,6 @@ script = ExtResource("1_agfs1")
 position = Vector2(0, -100)
 texture = ExtResource("2_lrhn5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1867472084]
+[node name="CharacterCollisionBox" type="CollisionShape2D" parent="." unique_id=1867472084]
 position = Vector2(-1, -71)
 shape = SubResource("RectangleShape2D_xcss6")
