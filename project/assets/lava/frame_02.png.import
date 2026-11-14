@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj0cerdwql0f1"
-path="res://.godot/imported/movingflatform.png-fab0d3208870f9a3a9decdc6251a11c8.ctex"
+uid="uid://b6prk4r4wquyy"
+path="res://.godot/imported/frame_02.png-3eaa647081e43ce171063c05ec0f3db4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/movingflatform.png"
-dest_files=["res://.godot/imported/movingflatform.png-fab0d3208870f9a3a9decdc6251a11c8.ctex"]
+source_file="res://assets/lava/frame_02.png"
+dest_files=["res://.godot/imported/frame_02.png-3eaa647081e43ce171063c05ec0f3db4.ctex"]
 
 [params]
 

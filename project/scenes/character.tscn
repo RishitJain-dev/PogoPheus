@@ -15,15 +15,10 @@ gradient = SubResource("Gradient_4evtd")
 width = 32
 height = 128
 
-[node name="Character" type="CharacterBody2D" unique_id=143415643]
+[node name="Character" type="CharacterBody2D" unique_id=143415643 node_paths=PackedStringArray("progress_bar")]
 script = ExtResource("1_agfs1")
 movement_speed = 80.0
-
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1926429057]
-visible = false
-material = SubResource("CanvasItemMaterial_suija")
-position = Vector2(0, 20)
-texture = SubResource("GradientTexture2D_lwexw")
+progress_bar = NodePath("")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=778313102]
 position = Vector2(0, -100)
@@ -32,9 +27,15 @@ texture = ExtResource("2_rkhd4")
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1091826253]
 material = SubResource("CanvasItemMaterial_suija")
-position = Vector2(-11, -112)
-scale = Vector2(10, 10)
+position = Vector2(0, -165.00002)
+scale = Vector2(6, 15)
 texture = ExtResource("3_lrhn5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1926429057]
+visible = false
+material = SubResource("CanvasItemMaterial_suija")
+position = Vector2(0, 20)
+texture = SubResource("GradientTexture2D_lwexw")
 
 [node name="CharacterCollisionBox" type="CollisionPolygon2D" parent="." unique_id=446865143]
 position = Vector2(-4, -118.5)

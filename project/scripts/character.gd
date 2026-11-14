@@ -61,6 +61,7 @@ func _physics_process(delta: float) -> void:
 	if is_positive(velocity.y) != is_positive(velocity_initial): #changing from moving down to up
 		if !Input.is_action_pressed("space") and jump_charge_progress!=0:
 			velocity.y *= sqrt(1.5*jump_charge_progress)
+		jump_charge_progress = 0
 	
 	
 

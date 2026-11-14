@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci646mm68tys3"
-path="res://.godot/imported/blue-blocks.png-56c0a7955e440ad0ce1f0f04d947a610.ctex"
+uid="uid://cdpu5mbnobq1q"
+path="res://.godot/imported/frame_12.png-ac2487c43d0415073ca7240c28e30e5d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/blue-blocks.png"
-dest_files=["res://.godot/imported/blue-blocks.png-56c0a7955e440ad0ce1f0f04d947a610.ctex"]
+source_file="res://assets/lava/frame_12.png"
+dest_files=["res://.godot/imported/frame_12.png-ac2487c43d0415073ca7240c28e30e5d.ctex"]
 
 [params]
 

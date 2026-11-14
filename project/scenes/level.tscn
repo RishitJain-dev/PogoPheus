@@ -1,10 +1,24 @@
-[gd_scene format=3 uid="uid://dxon0mk8dgivo"]
+[gd_scene format=4 uid="uid://dxon0mk8dgivo"]
 
 [ext_resource type="PackedScene" uid="uid://dqojtyf4in0y3" path="res://scenes/character.tscn" id="1_2q6dc"]
+[ext_resource type="Script" uid="uid://cidkyo67efp8c" path="res://scenes/main.gd" id="1_h6wmr"]
+[ext_resource type="PackedScene" uid="uid://cjeaasqu2bfgk" path="res://scenes/lava.tscn" id="1_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://7rpj3fsrkwky" path="res://scenes/ui/jump-charge.tscn" id="1_w7c3h"]
-[ext_resource type="PackedScene" uid="uid://bjo8v3yrj2f7u" path="res://scenes/tileset.tscn" id="3_w8frs"]
+[ext_resource type="TileSet" uid="uid://c8q2q547ppt00" path="res://assets/tileset.tres" id="3_w8frs"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xcss6"]
 
 [node name="Node2D" type="Node2D" unique_id=595287875]
+script = ExtResource("1_h6wmr")
+
+[node name="Lava" parent="." unique_id=1548742227 instance=ExtResource("1_mx8sn")]
+position = Vector2(1072, 519)
+
+[node name="Lava2" parent="." unique_id=1853384130 instance=ExtResource("1_mx8sn")]
+position = Vector2(1199, 518)
+
+[node name="Lava3" parent="." unique_id=1190990973 instance=ExtResource("1_mx8sn")]
+position = Vector2(1327, 518)
 
 [node name="ProgressBar" parent="." unique_id=519357473 instance=ExtResource("1_w7c3h")]
 custom_minimum_size = Vector2(1152, 648)
@@ -21,11 +35,22 @@ movement_speed = 500.0
 max_speed = 1000.0
 progress_bar = NodePath("../ProgressBar")
 
-[node name="CollisionShape2D" type="StaticBody2D" parent="." unique_id=1048205445]
+[node name="Camera2D" type="Camera2D" parent="Character" unique_id=771926092]
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 0.0
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=184645750]
-position = Vector2(207, 187)
-zoom = Vector2(0.5, 0.5)
-
-[node name="Node2D" parent="." unique_id=1576832625 instance=ExtResource("3_w8frs")]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1321212266]
 position = Vector2(-15, -58)
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAABAAMAAwAAAAAAAAACAAMAAwAAAAAAAAADAAMAAwAAAAAAAAAEAAMAAwAAAAAAAAAAAAQAAwAAAAAAAAABAAQAAwAAAAAAAAADAAQAAwAAAAAAAAAEAAQAAwAAAAAAAAACAAQAAwAAAAAAAAAFAAMAAwAAAAAAAAAGAAMAAwAAAAAAAAAHAAMAAwAAAAAAAAAHAAQAAwAAAAAAAAALAAQAAwAAAAAAAAAMAAQAAwAAAAAAAAAFAAQAAwAAAAAAAAAGAAQAAwAAAAAAAAANAAQAAwAAAAAAAAAIAAUAAwAAAAAAAAAJAAUAAwAAAAAAAAAKAAUAAwAAAAAAAAAKAAYAAwAAAAAAAAALAAYAAwAAAAAAAAALAAUAAwAAAAAAAAAJAAYAAwAAAAAAAAAIAAYAAwAAAAAAAAAHAAYAAwAAAAAAAAAHAAUAAwAAAAAAAAAGAAUAAwAAAAAAAAAFAAUAAwAAAAAAAAAFAAYAAwAAAAAAAAAGAAYAAwAAAAAAAAAAAAUAAwAAAAAAAAABAAUAAwAAAAAAAAABAAYAAwAAAAAAAAACAAYAAwAAAAAAAAADAAYAAwAAAAAAAAADAAUAAwAAAAAAAAAEAAUAAwAAAAAAAAACAAUAAwAAAAAAAAAEAAYAAwAAAAAAAAAAAAYAAwAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAALAAMABgAAAAAAAAAMAAMABwAAAAAAAAANAAMAAwAAAAAAAAAOAAIAAAAAAAAAAAAPAAIAAAAAAAAAAAAQAAIAAAAAAAAAAAAOAAMAAwAAAAAAAAAOAAQAAwAAAAAAAAAOAAUAAwAAAAAAAAAPAAUAAwAAAAAAAAAQAAYAAwAAAAAAAAAQAAUAAwAAAAAAAAAQAAQAAwAAAAAAAAAQAAMAAwAAAAAAAAAPAAMAAwAAAAAAAAAPAAQAAwAAAAAAAAAPAAYAAwAAAAAAAAAOAAYAAwAAAAAAAAARAAMABAAAAAAAAAASAAMAAQAAAAAAAAASAAQAAwAAAAAAAAASAAUAAwAAAAAAAAATAAUAAwAAAAAAAAAUAAUABAAAAAAAAAAXAAQABgAAAAAAAAAYAAQABwAAAAAAAAAXAAUAAwAAAAAAAAAYAAUAAwAAAAAAAAAYAAYAAwAAAAAAAAAXAAYAAwAAAAAAAAAWAAYAAwAAAAAAAAAVAAYAAwAAAAAAAAAUAAYAAwAAAAAAAAATAAYAAwAAAAAAAAASAAYAAwAAAAAAAAARAAYAAwAAAAAAAAARAAUAAwAAAAAAAAARAAQAAwAAAAAAAAARAAcAAwAAAAAAAAASAAcAAwAAAAAAAAATAAcAAwAAAAAAAAAUAAcAAwAAAAAAAAAVAAcAAwAAAAAAAAAWAAcAAwAAAAAAAAAXAAcAAwAAAAAAAAAYAAcAAwAAAAAAAAATAAQABAAAAAAAAAAWAAUAAwAAAAAAAAA=")
+tile_set = ExtResource("3_w8frs")
+rendering_quadrant_size = 32
+collision_enabled = false
+physics_quadrant_size = 32
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2105198242]
+physics_material_override = SubResource("PhysicsMaterial_xcss6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1905462715]
+polygon = PackedVector2Array(125, 305, 1026, 330, 1022, 587, 1418, 587, 1409, 424, 1658, 322, 2164, 322, 2494, 507, 2694, 670, 2820, 723, 2808, 568, 3199, 478, 3211, 959, 2172, 959, 2180, 835, -18, 856, -22, 456, 105, 464, 105, 464)

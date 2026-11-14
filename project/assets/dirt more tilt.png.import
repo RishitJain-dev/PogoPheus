@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmdv52sg14mjc"
-path="res://.godot/imported/red-blocks.png-1cd8daaeb0d3a0095c88c5418a79cc1b.ctex"
+uid="uid://sy7dgvohkebs"
+path="res://.godot/imported/dirt more tilt.png-a75d2fad95dcc4fe75c25bde3d500a1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/red-blocks.png"
-dest_files=["res://.godot/imported/red-blocks.png-1cd8daaeb0d3a0095c88c5418a79cc1b.ctex"]
+source_file="res://assets/dirt more tilt.png"
+dest_files=["res://.godot/imported/dirt more tilt.png-a75d2fad95dcc4fe75c25bde3d500a1c.ctex"]
 
 [params]
 

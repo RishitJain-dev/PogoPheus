@@ -1,45 +1,6 @@
 [gd_scene format=4 uid="uid://bjo8v3yrj2f7u"]
 
-[ext_resource type="Texture2D" uid="uid://c7q281nk3sf4h" path="res://assets/lava.png" id="1_t36hm"]
-[ext_resource type="Texture2D" uid="uid://djxdlugn7oeb8" path="res://assets/dirt.png" id="2_uvvw6"]
-[ext_resource type="Texture2D" uid="uid://cas6ncckg6sb8" path="res://assets/dirt-slantedt.png" id="3_h6tx6"]
-[ext_resource type="Texture2D" uid="uid://dtkeqk1msp6w2" path="res://assets/grass.png" id="4_ey0hl"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x0h2o"]
-texture = ExtResource("1_t36hm")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -9.128813, 1.5799885, -5.2666225, 16, -1.9310951, 16, 16, -16, 16)
-0:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-16, -16, 0.6220093, -16, 16, -16, 16, 16, -16, 16, -16, -16)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d4kqr"]
-texture = ExtResource("2_uvvw6")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -9.128813, 1.5799885, -5.2666225, 16, -1.9310951, 16, 16, -16, 16)
-0:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kgrll"]
-texture = ExtResource("3_h6tx6")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -9.128813, -16, -16, 1.4044342, -16, 0, -9.330143, 16, -2.7990417, 16, 16, -16, 16)
-0:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7dthx"]
-texture = ExtResource("4_ey0hl")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -9.128813, 1.5799885, -5.2666225, 16, -1.9310951, 16, 16, -16, 16)
-0:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
-
-[sub_resource type="TileSet" id="TileSet_suija"]
-tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 1
-sources/2 = SubResource("TileSetAtlasSource_x0h2o")
-sources/3 = SubResource("TileSetAtlasSource_d4kqr")
-sources/4 = SubResource("TileSetAtlasSource_kgrll")
-sources/5 = SubResource("TileSetAtlasSource_7dthx")
+[ext_resource type="TileSet" uid="uid://c8q2q547ppt00" path="res://assets/tileset.tres" id="1_tycba"]
 
 [node name="Node2D" type="Node2D" unique_id=1576832625]
 
@@ -47,7 +8,7 @@ sources/5 = SubResource("TileSetAtlasSource_7dthx")
 scale = Vector2(4, 4)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Level" unique_id=1321212266]
-tile_map_data = PackedByteArray("AAAAAAMAAgAAAAAAAAABAAMAAwAAAAAAAAACAAMAAwAAAAAAAAADAAMAAwAAAAAAAAAEAAMAAwAAAAAAAAAAAAQAAwAAAAAAAAABAAQAAwAAAAAAAAADAAQAAwAAAAAAAAAEAAQAAwAAAAAAAAACAAQAAwAAAAAAAAA=")
-tile_set = SubResource("TileSet_suija")
+tile_map_data = PackedByteArray("AAAAAAMAAgAAAAAAAAABAAMAAwAAAAAAAAACAAMAAwAAAAAAAAADAAMAAwAAAAAAAAAEAAMAAwAAAAAAAAAAAAQAAwAAAAAAAAABAAQAAwAAAAAAAAADAAQAAwAAAAAAAAAEAAQAAwAAAAAAAAACAAQAAwAAAAAAAAAFAAMABAAAAAAAAAA=")
+tile_set = ExtResource("1_tycba")
 rendering_quadrant_size = 32
 physics_quadrant_size = 32

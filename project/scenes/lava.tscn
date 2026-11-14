@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://cjeaasqu2bfgk"]
+
+[ext_resource type="Texture2D" uid="uid://dce8ovplyj11b" path="res://assets/lava/frame_00.png" id="1_mwhve"]
+[ext_resource type="Texture2D" uid="uid://cadfatn7m7nhb" path="res://assets/lava/frame_01.png" id="2_s8lkd"]
+[ext_resource type="Texture2D" uid="uid://b6prk4r4wquyy" path="res://assets/lava/frame_02.png" id="3_fvr6h"]
+[ext_resource type="Texture2D" uid="uid://b5hd4angll042" path="res://assets/lava/frame_03.png" id="4_g6clj"]
+[ext_resource type="Texture2D" uid="uid://dxxn6vgod06tp" path="res://assets/lava/frame_04.png" id="5_0tts6"]
+[ext_resource type="Texture2D" uid="uid://brksu5n3i2wpm" path="res://assets/lava/frame_05.png" id="6_0pdi3"]
+[ext_resource type="Texture2D" uid="uid://8bpuxl6en2u7" path="res://assets/lava/frame_06.png" id="7_33vn7"]
+[ext_resource type="Texture2D" uid="uid://dyqcyxb5rct0l" path="res://assets/lava/frame_07.png" id="8_xnnj0"]
+[ext_resource type="Texture2D" uid="uid://bdht3uavbtbjr" path="res://assets/lava/frame_08.png" id="9_va2jr"]
+[ext_resource type="Texture2D" uid="uid://d1e7dn4bvlq4t" path="res://assets/lava/frame_09.png" id="10_u3rt2"]
+[ext_resource type="Texture2D" uid="uid://cs0iot2vtr4lk" path="res://assets/lava/frame_10.png" id="11_ru5kj"]
+[ext_resource type="Texture2D" uid="uid://bin0lsu6r45hg" path="res://assets/lava/frame_11.png" id="12_ud4lf"]
+[ext_resource type="Texture2D" uid="uid://cdpu5mbnobq1q" path="res://assets/lava/frame_12.png" id="13_x2wpq"]
+[ext_resource type="Texture2D" uid="uid://jvlicojmbkpp" path="res://assets/lava/frame_13.png" id="14_ny5ik"]
+[ext_resource type="Texture2D" uid="uid://xlgruuuyjwwr" path="res://assets/lava/frame_14.png" id="15_8sove"]
+[ext_resource type="Texture2D" uid="uid://iedcpwm1es2u" path="res://assets/lava/frame_15.png" id="16_ksytl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xcss6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mwhve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_s8lkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fvr6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g6clj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0tts6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0pdi3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_33vn7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xnnj0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_va2jr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_u3rt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ru5kj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ud4lf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_x2wpq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ny5ik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_8sove")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ksytl")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 24.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcss6"]
+size = Vector2(32, 26)
+
+[node name="Lava" type="AnimatedSprite2D" unique_id=1548742227]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_xcss6")
+frame_progress = 0.6988549
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2021030480]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=124277352]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_xcss6")
