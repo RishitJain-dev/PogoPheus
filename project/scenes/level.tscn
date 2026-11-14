@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cjeaasqu2bfgk" path="res://scenes/lava.tscn" id="1_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://7rpj3fsrkwky" path="res://scenes/ui/jump-charge.tscn" id="1_w7c3h"]
 [ext_resource type="TileSet" uid="uid://c8q2q547ppt00" path="res://assets/tileset.tres" id="3_w8frs"]
+[ext_resource type="Texture2D" uid="uid://cqstomgwfgphx" path="res://assets/cloud.png" id="6_2r41h"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xcss6"]
 
@@ -16,7 +17,7 @@ offset_left = -571.0
 offset_top = -640.0
 offset_right = 5279.0
 offset_bottom = 1720.0
-color = Color(0, 1, 1, 1)
+color = Color(0.33333334, 0.6784314, 0.8352941, 1)
 
 [node name="Lava" parent="." unique_id=1548742227 instance=ExtResource("1_mx8sn")]
 position = Vector2(1072, 519)
@@ -61,3 +62,10 @@ polygon = PackedVector2Array(125, 305, 1026, 330, 1022, 587, 1418, 587, 1409, 42
 custom_minimum_size = Vector2(1152, 648)
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1945104385]
+
+[node name="Cloud" type="Sprite2D" parent="." unique_id=1206020534]
+position = Vector2(1482, 73)
+scale = Vector2(4, 4)
+texture = ExtResource("6_2r41h")
