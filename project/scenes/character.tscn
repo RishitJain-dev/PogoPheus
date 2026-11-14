@@ -8,6 +8,7 @@ size = Vector2(56, 262)
 
 [node name="Character" type="CharacterBody2D" unique_id=143415643]
 script = ExtResource("1_agfs1")
+movement_speed = 80.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=778313102]
 position = Vector2(0, -100)
