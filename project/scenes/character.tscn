@@ -1,10 +1,7 @@
 [gd_scene format=3 uid="uid://dqojtyf4in0y3"]
 
 [ext_resource type="Script" uid="uid://4yjxbsgt8ehn" path="res://scripts/character.gd" id="1_agfs1"]
-[ext_resource type="Texture2D" uid="uid://h5kxrsdw26dt" path="res://assets/sample-character.png" id="2_lrhn5"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcss6"]
-size = Vector2(56, 262)
+[ext_resource type="Texture2D" uid="uid://ceute6cj26cp1" path="res://assets/orph.png" id="2_rkhd4"]
 
 [node name="Character" type="CharacterBody2D" unique_id=143415643]
 script = ExtResource("1_agfs1")
@@ -12,8 +9,9 @@ movement_speed = 80.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=778313102]
 position = Vector2(0, -100)
-texture = ExtResource("2_lrhn5")
+scale = Vector2(6, 6)
+texture = ExtResource("2_rkhd4")
 
-[node name="CharacterCollisionBox" type="CollisionShape2D" parent="." unique_id=1867472084]
-position = Vector2(-1, -71)
-shape = SubResource("RectangleShape2D_xcss6")
+[node name="CharacterCollisionBox" type="CollisionPolygon2D" parent="." unique_id=446865143]
+position = Vector2(-4, -118.5)
+polygon = PackedVector2Array(46, 65.5, 46, 45.5, 58, 40.5, 58, 16.5, 37, 17.5, 28, -13.5, 25, -29.5, 31, -29.5, 29, -58.5, 11, -64.5, -26, -64.5, -28, -44.5, -38, -50.5, -42, -57.5, -60, -55.5, -58, -40.5, -48, -34.5, -35, -25.5, -18, -21.5, -24, -7.5, -32, 1.5, -31, 12.5, -34, 23.5, -34, 46.5, -45, 49.5, -46, 71.5, -39, 82.5, -22, 86.5, 24, 86.5, 46, 86.5)
