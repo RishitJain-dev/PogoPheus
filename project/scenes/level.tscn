@@ -2,11 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dqojtyf4in0y3" path="res://scenes/character.tscn" id="1_2q6dc"]
 [ext_resource type="PackedScene" uid="uid://7rpj3fsrkwky" path="res://scenes/ui/jump-charge.tscn" id="1_w7c3h"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcss6"]
-size = Vector2(1681, 134)
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xcss6"]
+[ext_resource type="PackedScene" uid="uid://bjo8v3yrj2f7u" path="res://scenes/tileset.tscn" id="3_w8frs"]
 
 [node name="Node2D" type="Node2D" unique_id=595287875]
 
@@ -27,26 +23,9 @@ progress_bar = NodePath("../ProgressBar")
 
 [node name="CollisionShape2D" type="StaticBody2D" parent="." unique_id=1048205445]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D" unique_id=912621717]
-position = Vector2(539, 539)
-shape = SubResource("RectangleShape2D_xcss6")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionShape2D" unique_id=145565168]
-position = Vector2(539, 539)
-rotation = 2.7925267
-shape = SubResource("RectangleShape2D_xcss6")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2070223103]
-position = Vector2(547.5, 727)
-scale = Vector2(3.3183594, 1)
-texture = SubResource("NoiseTexture2D_xcss6")
-
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1779506298]
-position = Vector2(547.5, 727)
-rotation = 2.7925267
-scale = Vector2(3.3183594, 1)
-texture = SubResource("NoiseTexture2D_xcss6")
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=184645750]
 position = Vector2(207, 187)
 zoom = Vector2(0.5, 0.5)
+
+[node name="Node2D" parent="." unique_id=1576832625 instance=ExtResource("3_w8frs")]
+position = Vector2(-15, -58)

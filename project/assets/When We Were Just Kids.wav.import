@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://1u60k5kyaiqs"
+path="res://.godot/imported/When We Were Just Kids.wav-b955df9206e47f0d01f0b441f432e678.sample"
+
+[deps]
+
+source_file="res://assets/When We Were Just Kids.wav"
+dest_files=["res://.godot/imported/When We Were Just Kids.wav-b955df9206e47f0d01f0b441f432e678.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
