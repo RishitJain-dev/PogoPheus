@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://4pqund3nukl7"]
+
+[ext_resource type="Texture2D" uid="uid://b2s85q4wh4f32" path="res://Screenshot 2026-11-14 105420.png" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://bj6oyvnm1bo4l" path="res://rotateSaw.gd" id="2_epypp"]
+
+[sub_resource type="Curve2D" id="Curve2D_0hol4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 457, 691, 0, 0, 0, 0, 1753, 652)
+}
+point_count = 2
+
+[node name="Node2D" type="Node2D" unique_id=1213835390]
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1587675212]
+y_sort_enabled = true
+position = Vector2(-445, -273)
+curve = SubResource("Curve2D_0hol4")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1851487104]
+position = Vector2(1337.503, 664.5034)
+rotation = -0.030083515
+progress = 880.9009
+script = ExtResource("2_epypp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=609883292]
+position = Vector2(-9.000002, 1)
+texture = ExtResource("1_0e48y")
+script = ExtResource("2_epypp")

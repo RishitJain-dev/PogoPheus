@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://4pqund3nukl7"]
+
+[ext_resource type="Texture2D" uid="uid://b2s85q4wh4f32" path="res://Screenshot 2026-11-14 105420.png" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://d0ndl3so042ex" path="res://followPathSaw.gd" id="1_epypp"]
+[ext_resource type="Script" uid="uid://b70wgyfag4ppr" path="res://global.gd" id="1_ir8iy"]
+[ext_resource type="Script" uid="uid://bj6oyvnm1bo4l" path="res://rotateSaw.gd" id="2_epypp"]
+[ext_resource type="Texture2D" uid="uid://dkmobmaj0041u" path="res://breakingblockplaceholder.png" id="4_0hol4"]
+[ext_resource type="Script" uid="uid://c3os8x68carn6" path="res://crumbling_block.gd" id="4_q6r6c"]
+[ext_resource type="Script" uid="uid://xwb85wiaihi3" path="res://movingplatform.gd" id="6_d21ai"]
+[ext_resource type="Texture2D" uid="uid://cerhxciyvlbun" path="res://moving.png" id="6_kdubu"]
+[ext_resource type="Texture2D" uid="uid://rhavvwcgvkqu" path="res://red.png" id="9_hqns4"]
+[ext_resource type="Texture2D" uid="uid://k5iuwc6fhwqx" path="res://blue.png" id="10_x0ka3"]
+
+[sub_resource type="Curve2D" id="Curve2D_0hol4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 457, 691, 0, 0, 0, 0, 1753, 652, 0, 0, 0, 0, 2091, 954)
+}
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ymuj7"]
+size = Vector2(72.80249, 66.14075)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrt8v"]
+size = Vector2(72.48978, 5.5644073)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mid1"]
+size = Vector2(205, 33)
+
+[node name="Node2D" type="Node2D" unique_id=1213835390 node_paths=PackedStringArray("timer", "switch")]
+script = ExtResource("1_ir8iy")
+timer = NodePath("Timer")
+switch = NodePath("Timer/Switch")
+
+[node name="Saw" type="Path2D" parent="." unique_id=1587675212]
+y_sort_enabled = true
+position = Vector2(-445, -273)
+curve = SubResource("Curve2D_0hol4")
+
+[node name="SawFollow" type="PathFollow2D" parent="Saw" unique_id=1851487104]
+position = Vector2(1337.503, 664.5034)
+rotation = -0.030083515
+progress = 880.9009
+loop = false
+script = ExtResource("1_epypp")
+
+[node name="SawSprite" type="Sprite2D" parent="Saw/SawFollow" unique_id=609883292]
+position = Vector2(-9, 1)
+texture = ExtResource("1_0e48y")
+script = ExtResource("2_epypp")
+
+[node name="CrumblingBlock" type="StaticBody2D" parent="." unique_id=102544462]
+visible = false
+position = Vector2(883.53723, 392.77368)
+rotation = -0.030083515
+script = ExtResource("4_q6r6c")
+
+[node name="Sprite2D" type="Sprite2D" parent="CrumblingBlock" unique_id=2126571320]
+position = Vector2(-397.55154, -38.749165)
+rotation = 0.034906585
+scale = Vector2(4.351148, 4.2398577)
+texture = ExtResource("4_0hol4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrumblingBlock" unique_id=793689026]
+position = Vector2(-393.64362, -35.6302)
+rotation = 0.02617994
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_ymuj7")
+
+[node name="DetectArea" type="Area2D" parent="CrumblingBlock" unique_id=1875048840]
+position = Vector2(-1264.9971, -126.32056)
+rotation = 0.026179941
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrumblingBlock/DetectArea" unique_id=264692596]
+position = Vector2(436.78027, 3.717987)
+shape = SubResource("RectangleShape2D_wrt8v")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=48442263]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1933007173]
+position = Vector2(203, 299)
+script = ExtResource("6_d21ai")
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" unique_id=287139429]
+position = Vector2(15, 0)
+texture = ExtResource("6_kdubu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=335214326]
+position = Vector2(18, 1)
+shape = SubResource("RectangleShape2D_7mid1")
+
+[node name="Timer" type="Timer" parent="." unique_id=417559432]
+
+[node name="Switch" type="Area2D" parent="Timer" unique_id=842723463]
+
+[node name="Sprite2D" type="Sprite2D" parent="Timer/Switch" unique_id=2023076885]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Timer/Switch" unique_id=33733443]
+
+[node name="RedBlock" type="StaticBody2D" parent="Timer" unique_id=1377838427 groups=["red_blocks"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Timer/RedBlock" unique_id=1729649674]
+
+[node name="Red" type="Sprite2D" parent="Timer/RedBlock" unique_id=1934927423]
+position = Vector2(437, 420)
+texture = ExtResource("9_hqns4")
+
+[node name="BlueBlock" type="StaticBody2D" parent="Timer" unique_id=785383824 groups=["blue_blocks"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Timer/BlueBlock" unique_id=210741954]
+
+[node name="Blue" type="Sprite2D" parent="Timer/BlueBlock" unique_id=1518964241]
+position = Vector2(577, 437)
+texture = ExtResource("10_x0ka3")
+
+[connection signal="body_entered" from="CrumblingBlock/DetectArea" to="CrumblingBlock" method="_on_detect_area_body_entered"]
