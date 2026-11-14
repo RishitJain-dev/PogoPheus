@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var spring_length: int = 100
-@export var spring_constant: int = 3.5
+@export var spring_constant: int = 7
 @export var mass: int = 5
 @export var movement_speed: float = 40
 @export var max_speed: float = 900
@@ -36,8 +36,11 @@ func _physics_process(delta: float) -> void:
 			rotation_degrees = -15
 	rotation_degrees = move_toward(rotation_degrees, 0, 3*delta)
 	
-	velocity.x = sin(rotation) * 1000 * delta * movement_speed
-	
+	velocity.x = sin(rotation) * 400 * delta * movement_speed
+	if absi(velocity.x) >= 50:
+		velocity.x = move_toward(velocity.x, 0, 5)
+	if velocity.x > 150:
+		velocity.x = 150
 	#if velocity.x >= 0:
 		#velocity.x = velocity.x / 1.5
 		#velocity.x += control * movement_speed

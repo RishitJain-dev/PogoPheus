@@ -11,7 +11,7 @@ size = Vector2(1681, 134)
 
 [node name="Character" parent="." unique_id=261713197 instance=ExtResource("1_2q6dc")]
 position = Vector2(451, 101)
-spring_constant = 8
+spring_constant = 300
 
 [node name="CollisionShape2D" type="StaticBody2D" parent="." unique_id=1048205445]
 
@@ -19,7 +19,18 @@ spring_constant = 8
 position = Vector2(539, 539)
 shape = SubResource("RectangleShape2D_xcss6")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionShape2D" unique_id=145565168]
+position = Vector2(539, 539)
+rotation = 2.7925267
+shape = SubResource("RectangleShape2D_xcss6")
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2070223103]
 position = Vector2(547.5, 727)
+scale = Vector2(3.3183594, 1)
+texture = SubResource("NoiseTexture2D_xcss6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1779506298]
+position = Vector2(547.5, 727)
+rotation = 2.7925267
 scale = Vector2(3.3183594, 1)
 texture = SubResource("NoiseTexture2D_xcss6")
