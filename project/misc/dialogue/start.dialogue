@@ -1,13 +1,15 @@
 ~ start
-Heidi: You're running really late, Orpheus.
+Soup: Haha you thought we'd let you try out the controls without your life on the line.
+Soup: Obviously not, but
+Soup: AAAHHHHH
+Heidi: Don't listen to him, you'll be fineeee!
+Heidi: But you're running really late, Orpheus.
 Heidi: The future of Hack Club is in your hands.
 Heidi: You need to get back to Hack Club HQ to turn off the AI slop machine destroying the server, as fast as possible!
 Heidi: I'm giving you a pogo stick so go go go!
 Heidi: Use A and S keys to move!
-do wait(10)
-Heidi: See that bar over there? That's your charge bar
-do wait(1.5)
-Heidi: Fill it up to jump super high!!
+Heidi: That bar at the top of your screen? That's your charge bar
+Heidi: Hold down space to fill it up, and let go just before bouncing to jump super high!!
 
 
 

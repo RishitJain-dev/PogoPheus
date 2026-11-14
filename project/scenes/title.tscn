@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://bw7wke3675tff"]
 
 [ext_resource type="Texture2D" uid="uid://cl2nq8wjwf6ek" path="res://assets/titlescreen.png" id="1_4ignj"]
+[ext_resource type="Script" uid="uid://bgarq1y2pxsow" path="res://scripts/title.gd" id="1_wosw1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xcss6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Control" type="Control" unique_id=259369601]
 layout_mode = 3
@@ -9,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wosw1")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=422238297]
 layout_mode = 1
@@ -17,3 +22,22 @@ offset_bottom = 648.0
 texture = ExtResource("1_4ignj")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="Button" type="Button" parent="." unique_id=760372287]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 421.0
+offset_right = 679.0
+offset_bottom = 491.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_xcss6")
+
+[node name="Button2" type="Button" parent="." unique_id=31205670]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 500.0
+offset_right = 679.0
+offset_bottom = 570.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_xcss6")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

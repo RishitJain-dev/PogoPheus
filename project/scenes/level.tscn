@@ -6,27 +6,123 @@
 [ext_resource type="PackedScene" uid="uid://7rpj3fsrkwky" path="res://scenes/ui/jump-charge.tscn" id="1_w7c3h"]
 [ext_resource type="TileSet" uid="uid://c8q2q547ppt00" path="res://assets/tileset.tres" id="3_w8frs"]
 [ext_resource type="Texture2D" uid="uid://cqstomgwfgphx" path="res://assets/cloud.png" id="6_2r41h"]
+[ext_resource type="Script" uid="uid://c6fccel11oal6" path="res://followPathSaw.gd" id="7_8c41q"]
+[ext_resource type="Texture2D" uid="uid://c44osk5pch85t" path="res://saw.png" id="8_olg7q"]
+[ext_resource type="Script" uid="uid://bkktj5n84nmjj" path="res://rotateSaw.gd" id="9_t1rx8"]
+[ext_resource type="Script" uid="uid://djpnjrcpr4ord" path="res://scripts/lava.gd" id="10_olg7q"]
+[ext_resource type="AudioStream" uid="uid://b3sgysweayq57" path="res://assets/When-We-Were-Just-Kids.mp3" id="11_t1rx8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xcss6"]
+
+[sub_resource type="Curve2D" id="Curve2D_0hol4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 545, 646, 0, 0, 0, 0, 1510, 658, 0, 0, 0, 0, 1623, 650, 0, 0, 0, 0, 1753, 652, 0, 0, 0, 0, 2008, 652)
+}
+point_count = 5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xcss6"]
+radius = 12.71927
 
 [node name="Node2D" type="Node2D" unique_id=595287875]
 script = ExtResource("1_h6wmr")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1638549274]
-offset_left = -571.0
+offset_left = -510.0
 offset_top = -640.0
-offset_right = 5279.0
+offset_right = 9870.0
 offset_bottom = 1720.0
 color = Color(0.33333334, 0.6784314, 0.8352941, 1)
 
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1945104385]
+scroll_scale = Vector2(0.1, 0.1)
+
+[node name="Cloud" type="Sprite2D" parent="Parallax2D" unique_id=1206020534]
+position = Vector2(977, 57)
+scale = Vector2(4, 4)
+texture = ExtResource("6_2r41h")
+
+[node name="Cloud2" type="Sprite2D" parent="Parallax2D" unique_id=1879455891]
+position = Vector2(209, 97)
+rotation = -0.19198622
+scale = Vector2(5, 5)
+texture = ExtResource("6_2r41h")
+
+[node name="Cloud4" type="Sprite2D" parent="Parallax2D" unique_id=1435683414]
+position = Vector2(1955.0001, -2.0000343)
+rotation = 0.43633232
+scale = Vector2(5, 5)
+texture = ExtResource("6_2r41h")
+
+[node name="Cloud5" type="Sprite2D" parent="Parallax2D" unique_id=1944176634]
+position = Vector2(2346.0005, 128.00002)
+rotation = 0.17453292
+scale = Vector2(4, 4)
+texture = ExtResource("6_2r41h")
+
+[node name="Cloud8" type="Sprite2D" parent="Parallax2D" unique_id=1145126563]
+position = Vector2(3566.0002, 206)
+rotation = 0.17453292
+scale = Vector2(4, 4)
+texture = ExtResource("6_2r41h")
+
+[node name="Cloud9" type="Sprite2D" parent="Parallax2D" unique_id=333296684]
+position = Vector2(3961.0005, 44.99997)
+rotation = 0.17453292
+scale = Vector2(8, 8)
+texture = ExtResource("6_2r41h")
+
+[node name="Cloud6" type="Sprite2D" parent="Parallax2D" unique_id=1490538543]
+position = Vector2(2552.0002, -38.000015)
+rotation = 0.17453292
+scale = Vector2(4, 4)
+texture = ExtResource("6_2r41h")
+
+[node name="Cloud10" type="Sprite2D" parent="Parallax2D" unique_id=609546574]
+position = Vector2(4243.0005, 276.00006)
+rotation = -0.24783675
+scale = Vector2(6, 6)
+texture = ExtResource("6_2r41h")
+
+[node name="Cloud7" type="Sprite2D" parent="Parallax2D" unique_id=133013630]
+position = Vector2(2808.0005, 208.99998)
+rotation = 0.17453292
+scale = Vector2(8, 8)
+texture = ExtResource("6_2r41h")
+
+[node name="Cloud3" type="Sprite2D" parent="Parallax2D" unique_id=1195576360]
+position = Vector2(1425.0001, 109.00003)
+rotation = -0.19198622
+scale = Vector2(7, 7)
+skew = -0.34906584
+texture = ExtResource("6_2r41h")
+
 [node name="Lava" parent="." unique_id=1548742227 instance=ExtResource("1_mx8sn")]
 position = Vector2(1072, 519)
+scale = Vector2(4.1, 4.1)
 
 [node name="Lava2" parent="." unique_id=1853384130 instance=ExtResource("1_mx8sn")]
 position = Vector2(1199, 518)
+scale = Vector2(4.1, 4.1)
 
-[node name="Lava3" parent="." unique_id=1190990973 instance=ExtResource("1_mx8sn")]
-position = Vector2(1328, 518)
+[node name="Lava4" parent="." unique_id=1559171234 instance=ExtResource("1_mx8sn")]
+position = Vector2(2735, 648)
+scale = Vector2(4.1, 4.1)
+
+[node name="Lava5" parent="." unique_id=1815398296 instance=ExtResource("1_mx8sn")]
+position = Vector2(2735, 648)
+scale = Vector2(4.1, 4.1)
+
+[node name="Lava6" parent="." unique_id=272560121 instance=ExtResource("1_mx8sn")]
+position = Vector2(8119.0005, 1154)
+scale = Vector2(4.6, 4.6)
+
+[node name="Lava7" parent="." unique_id=115567925 instance=ExtResource("1_mx8sn")]
+position = Vector2(8249, 1156)
+scale = Vector2(4.6, 4.6)
+
+[node name="Lava8" parent="." unique_id=387879251 instance=ExtResource("1_mx8sn")]
+position = Vector2(8381, 1156)
+scale = Vector2(4.6, 4.6)
 
 [node name="Character" parent="." unique_id=261713197 node_paths=PackedStringArray("progress_bar") instance=ExtResource("1_2q6dc")]
 position = Vector2(451, 101)
@@ -44,7 +140,7 @@ rotation_smoothing_speed = 0.0
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1321212266]
 position = Vector2(-15, -58)
 scale = Vector2(4, 4)
-tile_map_data = PackedByteArray("AAABAAMAAwAAAAAAAAACAAMAAwAAAAAAAAADAAMAAwAAAAAAAAAEAAMAAwAAAAAAAAAAAAQAAwAAAAAAAAABAAQAAwAAAAAAAAADAAQAAwAAAAAAAAAEAAQAAwAAAAAAAAACAAQAAwAAAAAAAAAFAAMAAwAAAAAAAAAGAAMAAwAAAAAAAAAHAAMAAwAAAAAAAAAHAAQAAwAAAAAAAAALAAQAAwAAAAAAAAAMAAQAAwAAAAAAAAAFAAQAAwAAAAAAAAAGAAQAAwAAAAAAAAANAAQAAwAAAAAAAAAIAAUAAwAAAAAAAAAJAAUAAwAAAAAAAAAKAAUAAwAAAAAAAAAKAAYAAwAAAAAAAAALAAYAAwAAAAAAAAALAAUAAwAAAAAAAAAJAAYAAwAAAAAAAAAIAAYAAwAAAAAAAAAHAAYAAwAAAAAAAAAHAAUAAwAAAAAAAAAGAAUAAwAAAAAAAAAFAAUAAwAAAAAAAAAFAAYAAwAAAAAAAAAGAAYAAwAAAAAAAAAAAAUAAwAAAAAAAAABAAUAAwAAAAAAAAABAAYAAwAAAAAAAAACAAYAAwAAAAAAAAADAAYAAwAAAAAAAAADAAUAAwAAAAAAAAAEAAUAAwAAAAAAAAACAAUAAwAAAAAAAAAEAAYAAwAAAAAAAAAAAAYAAwAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAALAAMABgAAAAAAAAAMAAMABwAAAAAAAAANAAMAAwAAAAAAAAAOAAIAAAAAAAAAAAAPAAIAAAAAAAAAAAAQAAIAAAAAAAAAAAAOAAMAAwAAAAAAAAAOAAQAAwAAAAAAAAAOAAUAAwAAAAAAAAAPAAUAAwAAAAAAAAAQAAYAAwAAAAAAAAAQAAUAAwAAAAAAAAAQAAQAAwAAAAAAAAAQAAMAAwAAAAAAAAAPAAMAAwAAAAAAAAAPAAQAAwAAAAAAAAAPAAYAAwAAAAAAAAAOAAYAAwAAAAAAAAARAAMABAAAAAAAAAASAAMAAQAAAAAAAAASAAQAAwAAAAAAAAASAAUAAwAAAAAAAAATAAUAAwAAAAAAAAAUAAUABAAAAAAAAAAXAAQABgAAAAAAAAAYAAQABwAAAAAAAAAXAAUAAwAAAAAAAAAYAAUAAwAAAAAAAAAYAAYAAwAAAAAAAAAXAAYAAwAAAAAAAAAWAAYAAwAAAAAAAAAVAAYAAwAAAAAAAAAUAAYAAwAAAAAAAAATAAYAAwAAAAAAAAASAAYAAwAAAAAAAAARAAYAAwAAAAAAAAARAAUAAwAAAAAAAAARAAQAAwAAAAAAAAARAAcAAwAAAAAAAAASAAcAAwAAAAAAAAATAAcAAwAAAAAAAAAUAAcAAwAAAAAAAAAVAAcAAwAAAAAAAAAWAAcAAwAAAAAAAAAXAAcAAwAAAAAAAAAYAAcAAwAAAAAAAAATAAQABAAAAAAAAAAWAAUAAwAAAAAAAAANAAIAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAABAAMAAwAAAAAAAAACAAMAAwAAAAAAAAADAAMAAwAAAAAAAAAEAAMAAwAAAAAAAAAAAAQAAwAAAAAAAAABAAQAAwAAAAAAAAADAAQAAwAAAAAAAAAEAAQAAwAAAAAAAAACAAQAAwAAAAAAAAAFAAMAAwAAAAAAAAAGAAMAAwAAAAAAAAAHAAMAAwAAAAAAAAAHAAQAAwAAAAAAAAALAAQAAwAAAAAAAAAMAAQAAwAAAAAAAAAFAAQAAwAAAAAAAAAGAAQAAwAAAAAAAAANAAQAAwAAAAAAAAAIAAUAAwAAAAAAAAAJAAUAAwAAAAAAAAAKAAUAAwAAAAAAAAAKAAYAAwAAAAAAAAALAAYAAwAAAAAAAAALAAUAAwAAAAAAAAAJAAYAAwAAAAAAAAAIAAYAAwAAAAAAAAAHAAYAAwAAAAAAAAAHAAUAAwAAAAAAAAAGAAUAAwAAAAAAAAAFAAUAAwAAAAAAAAAFAAYAAwAAAAAAAAAGAAYAAwAAAAAAAAAAAAUAAwAAAAAAAAABAAUAAwAAAAAAAAABAAYAAwAAAAAAAAACAAYAAwAAAAAAAAADAAYAAwAAAAAAAAADAAUAAwAAAAAAAAAEAAUAAwAAAAAAAAACAAUAAwAAAAAAAAAEAAYAAwAAAAAAAAAAAAYAAwAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAALAAMABgAAAAAAAAAMAAMABwAAAAAAAAANAAMAAwAAAAAAAAAOAAIAAAAAAAAAAAAPAAIAAAAAAAAAAAAQAAIAAAAAAAAAAAAOAAMAAwAAAAAAAAAOAAQAAwAAAAAAAAAOAAUAAwAAAAAAAAAPAAUAAwAAAAAAAAAQAAYAAwAAAAAAAAAQAAUAAwAAAAAAAAAQAAQAAwAAAAAAAAAQAAMAAwAAAAAAAAAPAAMAAwAAAAAAAAAPAAQAAwAAAAAAAAAPAAYAAwAAAAAAAAAOAAYAAwAAAAAAAAARAAMABAAAAAAAAAASAAMAAQAAAAAAAAASAAQAAwAAAAAAAAASAAUAAwAAAAAAAAATAAUAAwAAAAAAAAAUAAUAAwAAAAAAAAAXAAQABgAAAAAAAAAYAAQABwAAAAAAAAAXAAUAAwAAAAAAAAAYAAUAAwAAAAAAAAAYAAYAAwAAAAAAAAAXAAYAAwAAAAAAAAAWAAYAAwAAAAAAAAAVAAYAAwAAAAAAAAAUAAYAAwAAAAAAAAATAAYAAwAAAAAAAAASAAYAAwAAAAAAAAARAAYAAwAAAAAAAAARAAUAAwAAAAAAAAARAAQAAwAAAAAAAAARAAcAAwAAAAAAAAASAAcAAwAAAAAAAAATAAcAAwAAAAAAAAAUAAcAAwAAAAAAAAAVAAcAAwAAAAAAAAAWAAcAAwAAAAAAAAAXAAcAAwAAAAAAAAAYAAcAAwAAAAAAAAATAAQABAAAAAAAAAAWAAUAAwAAAAAAAAANAAIAAAAAAAAAAAAZAAUAAwAAAAAAAAAZAAYAAwAAAAAAAAAaAAYAAwAAAAAAAAAaAAcAAwAAAAAAAAAbAAcAAwAAAAAAAAAcAAcAAwAAAAAAAAAZAAcAAwAAAAAAAAAbAAYAAwAAAAAAAAAcAAgAAwAAAAAAAAAcAAkAAwAAAAAAAAAcAAoAAwAAAAAAAAAbAAoAAwAAAAAAAAAbAAkAAwAAAAAAAAAaAAkAAwAAAAAAAAAaAAgAAwAAAAAAAAAbAAgAAwAAAAAAAAAaAAoAAwAAAAAAAAAdAAoAAwAAAAAAAAAeAAoAAwAAAAAAAAAfAAoAAwAAAAAAAAAfAAkAAwAAAAAAAAAeAAkAAwAAAAAAAAAdAAkAAwAAAAAAAAAgAAoAAwAAAAAAAAAhAAoAAwAAAAAAAAAhAAkAAwAAAAAAAAAiAAkAAwAAAAAAAAAjAAkAAwAAAAAAAAAiAAoAAwAAAAAAAAAgAAkAAwAAAAAAAAAjAAoAAwAAAAAAAAAkAAoAAwAAAAAAAAAhAAgAAwAAAAAAAAAiAAgAAwAAAAAAAAAjAAgAAwAAAAAAAAAjAAcAAwAAAAAAAAAiAAcAAwAAAAAAAAAgAAgAAwAAAAAAAAAaAAUAAAAAAAAAAAAbAAUAAAAAAAAAAAAcAAYAAAAAAAAAAAAZAAQAAAAAAAAAAAAgAAcAAwAAAAAAAAAhAAcAAwAAAAAAAAAiAAYAAAAAAAAAAAAjAAYAAAAAAAAAAAAeAAgAAwAAAAAAAAAfAAgAAwAAAAAAAAAkAAcAAwAAAAAAAAAlAAcAAwAAAAAAAAAmAAcAAwAAAAAAAAAnAAcAAwAAAAAAAAAoAAcAAwAAAAAAAAAnAAgAAwAAAAAAAAAmAAgAAwAAAAAAAAAlAAgAAwAAAAAAAAAkAAgAAwAAAAAAAAAoAAgAAwAAAAAAAAApAAgAAwAAAAAAAAAoAAkAAwAAAAAAAAAnAAkAAwAAAAAAAAAmAAkAAwAAAAAAAAApAAkAAwAAAAAAAAAqAAkAAwAAAAAAAAAnAAoAAwAAAAAAAAAoAAoAAwAAAAAAAAApAAoAAwAAAAAAAAAqAAoAAwAAAAAAAAAuAAoABgAAAAAAAAAvAAoABwAAAAAAAAAwAAoAAwAAAAAAAAAyAAkABwAAAAAAAAAxAAkABgAAAAAAAAAzAAkAAwAAAAAAAAAxAAoAAwAAAAAAAAAyAAoAAwAAAAAAAAAzAAoAAwAAAAAAAAApAAsAAwAAAAAAAAAqAAsAAwAAAAAAAAArAAsAAwAAAAAAAAAsAAsAAwAAAAAAAAAtAAsAAwAAAAAAAAAuAAsAAwAAAAAAAAAvAAsAAwAAAAAAAAAwAAsAAwAAAAAAAAAxAAsAAwAAAAAAAAAyAAsAAwAAAAAAAAAzAAsAAwAAAAAAAAAkAAYAAAAAAAAAAAAlAAYAAAAAAAAAAAAmAAYAAAAAAAAAAAAnAAYAAAAAAAAAAAAoAAYAAAAAAAAAAAApAAcAAAAAAAAAAAAqAAgAAAAAAAAAAAAwAAkAAAAAAAAAAAAzAAgAAAAAAAAAAAAdAAgAAwAAAAAAAAAdAAcAAwAAAAAAAAAeAAcAAwAAAAAAAAAfAAcAAwAAAAAAAAAdAAYAAAAAAAAAAAAeAAYAAAAAAAAAAAAfAAYAAAAAAAAAAAAgAAYAAAAAAAAAAAAhAAYAAAAAAAAAAAAKAAQAAwAAAAAAAAA0AAsAAwAAAAAAAAA0AAoAAwAAAAAAAAA0AAkAAwAAAAAAAAA1AAkAAwAAAAAAAAA2AAkAAwAAAAAAAAA3AAkAAwAAAAAAAAA4AAkAAwAAAAAAAAA5AAkAAwAAAAAAAAA6AAkAAwAAAAAAAAA7AAkAAwAAAAAAAAA8AAkAAwAAAAAAAAA9AAkAAwAAAAAAAAA9AAoAAwAAAAAAAAA9AAsAAwAAAAAAAAA8AAsAAwAAAAAAAAA7AAsAAwAAAAAAAAA6AAsAAwAAAAAAAAA5AAsAAwAAAAAAAAA4AAsAAwAAAAAAAAA3AAsAAwAAAAAAAAA2AAsAAwAAAAAAAAA1AAsAAwAAAAAAAAA1AAoAAwAAAAAAAAA2AAoAAwAAAAAAAAA3AAoAAwAAAAAAAAA4AAoAAwAAAAAAAAA5AAoAAwAAAAAAAAA6AAoAAwAAAAAAAAA7AAoAAwAAAAAAAAA8AAoAAwAAAAAAAAA+AAkAAwAAAAAAAAA+AAoAAwAAAAAAAAA+AAsAAwAAAAAAAAA/AAoAAwAAAAAAAABAAAoAAwAAAAAAAABBAAoAAwAAAAAAAABBAAsAAwAAAAAAAABAAAsAAwAAAAAAAAA/AAsAAwAAAAAAAABCAAsAAwAAAAAAAABCAAoAAwAAAAAAAABCAAkAAwAAAAAAAABDAAkAAwAAAAAAAABEAAkAAwAAAAAAAABFAAoAAwAAAAAAAABGAAoAAwAAAAAAAABFAAsAAwAAAAAAAABEAAoAAwAAAAAAAABDAAoAAwAAAAAAAABDAAsAAwAAAAAAAABEAAsAAwAAAAAAAABFAAkAAwAAAAAAAABGAAkAAwAAAAAAAABGAAsAAwAAAAAAAABCAAgAAAAAAAAAAABDAAgAAAAAAAAAAABEAAgAAAAAAAAAAABFAAgAAAAAAAAAAABGAAgAAAAAAAAAAAAMAAYAAwAAAAAAAAANAAYAAwAAAAAAAAAMAAUAAwAAAAAAAAANAAUAAwAAAAAAAAA=")
 tile_set = ExtResource("3_w8frs")
 rendering_quadrant_size = 32
 collision_enabled = false
@@ -54,7 +150,7 @@ physics_quadrant_size = 32
 physics_material_override = SubResource("PhysicsMaterial_xcss6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1905462715]
-polygon = PackedVector2Array(125, 305, 1026, 330, 1022, 587, 1418, 587, 1409, 424, 1658, 322, 2164, 322, 2494, 507, 2694, 670, 2820, 723, 2808, 568, 3199, 478, 3211, 959, 2172, 959, 2180, 835, -18, 856, -22, 456, 105, 464, 105, 464)
+polygon = PackedVector2Array(125, 305, 1026, 330, 1022, 587, 1267, 582, 1269, 460, 1397, 445, 1658, 322, 2164, 322, 2494, 507, 2544, 508, 2544, 580, 2664, 581, 2671, 711, 2820, 723, 2808, 568, 3199, 478, 3186, 583, 3311, 588, 3325, 722, 3547, 713, 3578, 825, 3699, 843, 4349, 790, 4592, 794, 5228, 805, 5240, 923, 5358, 919, 5362, 1074, 5484, 1082, 5493, 1351, 5894, 1343, 6139, 1241, 6536, 1094, 6637, 1096, 9088, 1116, 9075, 1464, 6640, 1482, 5223, 1470, 5228, 1364, 4975, 1347, 4991, 1237, 4836, 1213, 4848, 1111, 4579, 1090, 4596, 1202, 4744, 1225, 4731, 1337, 3303, 1359, 3316, 964, 3211, 959, 2172, 959, 2180, 835, -18, 856, -478, 933, -433, 153, 114, -125, 105, 464, 105, 464)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=853576743]
 
@@ -63,9 +159,64 @@ custom_minimum_size = Vector2(1152, 648)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1945104385]
+[node name="Saw" type="Path2D" parent="." unique_id=1617285354]
+y_sort_enabled = true
+position = Vector2(3774, 150)
+curve = SubResource("Curve2D_0hol4")
 
-[node name="Cloud" type="Sprite2D" parent="." unique_id=1206020534]
-position = Vector2(1482, 73)
-scale = Vector2(4, 4)
-texture = ExtResource("6_2r41h")
+[node name="SawFollow" type="PathFollow2D" parent="Saw" unique_id=207560995]
+position = Vector2(1425.84, 656.9534)
+rotation = 0.0124345925
+progress = 880.9009
+loop = false
+script = ExtResource("7_8c41q")
+
+[node name="SawSprite" type="Sprite2D" parent="Saw/SawFollow" unique_id=1784100131]
+position = Vector2(-126.924194, -6.744995)
+scale = Vector2(10, 10)
+texture = ExtResource("8_olg7q")
+script = ExtResource("9_t1rx8")
+
+[node name="Area2D" type="Area2D" parent="Saw/SawFollow/SawSprite" unique_id=1117076159]
+script = ExtResource("10_olg7q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Saw/SawFollow/SawSprite/Area2D" unique_id=882055717]
+shape = SubResource("CircleShape2D_xcss6")
+
+[node name="Saw2" type="Path2D" parent="." unique_id=1613979308]
+y_sort_enabled = true
+position = Vector2(6000, 400)
+curve = SubResource("Curve2D_0hol4")
+
+[node name="SawFollow" type="PathFollow2D" parent="Saw2" unique_id=429410491]
+position = Vector2(1425.84, 656.9534)
+rotation = 0.0124345925
+progress = 880.9009
+loop = false
+script = ExtResource("7_8c41q")
+
+[node name="SawSprite" type="Sprite2D" parent="Saw2/SawFollow" unique_id=1082398908]
+position = Vector2(-126.924194, -6.744995)
+scale = Vector2(10, 10)
+texture = ExtResource("8_olg7q")
+script = ExtResource("9_t1rx8")
+
+[node name="Area2D" type="Area2D" parent="Saw2/SawFollow/SawSprite" unique_id=1339800045]
+script = ExtResource("10_olg7q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Saw2/SawFollow/SawSprite/Area2D" unique_id=229506784]
+shape = SubResource("CircleShape2D_xcss6")
+
+[node name="Label" type="Label" parent="Saw2" unique_id=147186166]
+offset_left = 1208.0
+offset_top = 407.0
+offset_right = 1491.0
+offset_bottom = 456.0
+text = "Good Job game over
+GIVE MONEY TO HACK CLUB OR ELSE"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1427923723]
+stream = ExtResource("11_t1rx8")
+
+[connection signal="body_entered" from="Saw/SawFollow/SawSprite/Area2D" to="Saw/SawFollow/SawSprite/Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Saw2/SawFollow/SawSprite/Area2D" to="Saw2/SawFollow/SawSprite/Area2D" method="_on_body_entered"]

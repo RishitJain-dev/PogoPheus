@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://b70h267h2c3y6"]
+
+[ext_resource type="Script" uid="uid://dyskmor7ustas" path="res://global.gd" id="1_ir8iy"]
+[ext_resource type="Script" uid="uid://bvpcsi1dn1sgt" path="res://movingplatform.gd" id="6_d21ai"]
+[ext_resource type="Texture2D" uid="uid://cerhxciyvlbun" path="res://moving.png" id="6_kdubu"]
+[ext_resource type="Texture2D" uid="uid://dce8ovplyj11b" path="res://assets/lava/frame_00.png" id="9_bjha6"]
+[ext_resource type="Texture2D" uid="uid://cadfatn7m7nhb" path="res://assets/lava/frame_01.png" id="10_gt76g"]
+[ext_resource type="Texture2D" uid="uid://b6prk4r4wquyy" path="res://assets/lava/frame_02.png" id="11_1fr6y"]
+[ext_resource type="Texture2D" uid="uid://b5hd4angll042" path="res://assets/lava/frame_03.png" id="12_2hxjc"]
+[ext_resource type="Texture2D" uid="uid://dxxn6vgod06tp" path="res://assets/lava/frame_04.png" id="13_ebxd8"]
+[ext_resource type="Texture2D" uid="uid://brksu5n3i2wpm" path="res://assets/lava/frame_05.png" id="14_2u7jv"]
+[ext_resource type="Texture2D" uid="uid://8bpuxl6en2u7" path="res://assets/lava/frame_06.png" id="15_24dk6"]
+[ext_resource type="Texture2D" uid="uid://dyqcyxb5rct0l" path="res://assets/lava/frame_07.png" id="16_mryly"]
+[ext_resource type="Texture2D" uid="uid://bdht3uavbtbjr" path="res://assets/lava/frame_08.png" id="17_kq1c5"]
+[ext_resource type="Texture2D" uid="uid://d1e7dn4bvlq4t" path="res://assets/lava/frame_09.png" id="18_ornx7"]
+[ext_resource type="Texture2D" uid="uid://cs0iot2vtr4lk" path="res://assets/lava/frame_10.png" id="19_cnnru"]
+[ext_resource type="Texture2D" uid="uid://bin0lsu6r45hg" path="res://assets/lava/frame_11.png" id="20_540hr"]
+[ext_resource type="Texture2D" uid="uid://cdpu5mbnobq1q" path="res://assets/lava/frame_12.png" id="21_6ip5v"]
+[ext_resource type="Texture2D" uid="uid://jvlicojmbkpp" path="res://assets/lava/frame_13.png" id="22_q5dlx"]
+[ext_resource type="Texture2D" uid="uid://xlgruuuyjwwr" path="res://assets/lava/frame_14.png" id="23_c4wnb"]
+[ext_resource type="Texture2D" uid="uid://iedcpwm1es2u" path="res://assets/lava/frame_15.png" id="24_7plk7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mid1"]
+size = Vector2(197.5, 28.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ei405"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_bjha6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_gt76g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1fr6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2hxjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ebxd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2u7jv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_24dk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_mryly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_kq1c5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ornx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_cnnru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_540hr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_6ip5v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_q5dlx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_c4wnb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_7plk7")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 16.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1213835390 node_paths=PackedStringArray("timer", "switch")]
+script = ExtResource("1_ir8iy")
+timer = NodePath("Timer")
+switch = NodePath("Timer/Switch")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1933007173]
+position = Vector2(203, 299)
+script = ExtResource("6_d21ai")
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" unique_id=287139429]
+position = Vector2(15, 0)
+texture = ExtResource("6_kdubu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=335214326]
+position = Vector2(21.75, 3.25)
+shape = SubResource("RectangleShape2D_7mid1")
+
+[node name="Timer" type="Timer" parent="." unique_id=417559432]
+
+[node name="Switch" type="Area2D" parent="Timer" unique_id=842723463]
+
+[node name="Sprite2D" type="Sprite2D" parent="Timer/Switch" unique_id=2023076885]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Timer/Switch" unique_id=33733443]
+
+[node name="RedBlock" type="StaticBody2D" parent="Timer" unique_id=1377838427 groups=["red_blocks"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Timer/RedBlock" unique_id=1729649674]
+
+[node name="Red" type="Sprite2D" parent="Timer/RedBlock" unique_id=1934927423]
+position = Vector2(392, 571)
+scale = Vector2(10, 10)
+
+[node name="Red2" type="Sprite2D" parent="Timer/RedBlock" unique_id=165513107]
+position = Vector2(354, 731.00006)
+scale = Vector2(10, 10)
+
+[node name="BlueBlock" type="StaticBody2D" parent="Timer" unique_id=785383824 groups=["blue_blocks"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Timer/BlueBlock" unique_id=210741954]
+
+[node name="Blue" type="Sprite2D" parent="Timer/BlueBlock" unique_id=1518964241]
+position = Vector2(817.00006, 569)
+scale = Vector2(10, 10)
+
+[node name="Blue2" type="Sprite2D" parent="Timer/BlueBlock" unique_id=16151873]
+position = Vector2(784.00006, 755.00006)
+scale = Vector2(10, 10)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1355141405]
+position = Vector2(207, 235)
+sprite_frames = SubResource("SpriteFrames_ei405")
+frame_progress = 0.52423096

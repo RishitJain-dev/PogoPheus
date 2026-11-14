@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="New Game Project"
-run/main_scene="uid://dxon0mk8dgivo"
+run/main_scene="uid://bw7wke3675tff"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 DialogueManager="*uid://c3rodes2l3gxb"
+
+[dialogue_manager]
+
+runtime/balloon_path="res://misc/dialogue/balloon.tscn"
 
 [display]
 

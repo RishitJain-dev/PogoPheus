@@ -1,0 +1,169 @@
+[gd_scene format=3 uid="uid://4pqund3nukl7"]
+
+[ext_resource type="Script" uid="uid://d0ndl3so042ex" path="res://followPathSaw.gd" id="1_epypp"]
+[ext_resource type="Script" uid="uid://b70wgyfag4ppr" path="res://global.gd" id="1_ir8iy"]
+[ext_resource type="Script" uid="uid://bj6oyvnm1bo4l" path="res://rotateSaw.gd" id="2_epypp"]
+[ext_resource type="Texture2D" uid="uid://c44osk5pch85t" path="res://saw.png" id="3_rj586"]
+[ext_resource type="Script" uid="uid://xwb85wiaihi3" path="res://movingplatform.gd" id="6_d21ai"]
+[ext_resource type="Texture2D" uid="uid://cerhxciyvlbun" path="res://moving.png" id="6_kdubu"]
+[ext_resource type="Texture2D" uid="uid://0t4bvnbeedo0" path="res://Cycle blocks/red-blocks.png" id="7_4d7sh"]
+[ext_resource type="Texture2D" uid="uid://cgj05cjbkipqw" path="res://Cycle blocks/blue-blocks.png" id="8_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://dce8ovplyj11b" path="res://Lava/frames/frame_00.png" id="9_bjha6"]
+[ext_resource type="Texture2D" uid="uid://cadfatn7m7nhb" path="res://Lava/frames/frame_01.png" id="10_gt76g"]
+[ext_resource type="Texture2D" uid="uid://b6prk4r4wquyy" path="res://Lava/frames/frame_02.png" id="11_1fr6y"]
+[ext_resource type="Texture2D" uid="uid://b5hd4angll042" path="res://Lava/frames/frame_03.png" id="12_2hxjc"]
+[ext_resource type="Texture2D" uid="uid://dxxn6vgod06tp" path="res://Lava/frames/frame_04.png" id="13_ebxd8"]
+[ext_resource type="Texture2D" uid="uid://brksu5n3i2wpm" path="res://Lava/frames/frame_05.png" id="14_2u7jv"]
+[ext_resource type="Texture2D" uid="uid://8bpuxl6en2u7" path="res://Lava/frames/frame_06.png" id="15_24dk6"]
+[ext_resource type="Texture2D" uid="uid://dyqcyxb5rct0l" path="res://Lava/frames/frame_07.png" id="16_mryly"]
+[ext_resource type="Texture2D" uid="uid://bdht3uavbtbjr" path="res://Lava/frames/frame_08.png" id="17_kq1c5"]
+[ext_resource type="Texture2D" uid="uid://d1e7dn4bvlq4t" path="res://Lava/frames/frame_09.png" id="18_ornx7"]
+[ext_resource type="Texture2D" uid="uid://cs0iot2vtr4lk" path="res://Lava/frames/frame_10.png" id="19_cnnru"]
+[ext_resource type="Texture2D" uid="uid://bin0lsu6r45hg" path="res://Lava/frames/frame_11.png" id="20_540hr"]
+[ext_resource type="Texture2D" uid="uid://cdpu5mbnobq1q" path="res://Lava/frames/frame_12.png" id="21_6ip5v"]
+[ext_resource type="Script" uid="uid://c851csvfobqsy" path="res://Lava/animatelava.gd" id="21_7vxoj"]
+[ext_resource type="Texture2D" uid="uid://jvlicojmbkpp" path="res://Lava/frames/frame_13.png" id="22_q5dlx"]
+[ext_resource type="Texture2D" uid="uid://xlgruuuyjwwr" path="res://Lava/frames/frame_14.png" id="23_c4wnb"]
+[ext_resource type="Texture2D" uid="uid://iedcpwm1es2u" path="res://Lava/frames/frame_15.png" id="24_7plk7"]
+
+[sub_resource type="Curve2D" id="Curve2D_0hol4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 457, 691, 0, 0, 0, 0, 1753, 652, 0, 0, 0, 0, 2091, 954)
+}
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mid1"]
+size = Vector2(197.5, 28.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ei405"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_bjha6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_gt76g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1fr6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2hxjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ebxd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2u7jv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_24dk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_mryly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_kq1c5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ornx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_cnnru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_540hr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_6ip5v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_q5dlx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_c4wnb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_7plk7")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 16.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1213835390 node_paths=PackedStringArray("timer", "switch")]
+script = ExtResource("1_ir8iy")
+timer = NodePath("Timer")
+switch = NodePath("Timer/Switch")
+
+[node name="Saw" type="Path2D" parent="." unique_id=1587675212]
+y_sort_enabled = true
+position = Vector2(-445, -273)
+curve = SubResource("Curve2D_0hol4")
+
+[node name="SawFollow" type="PathFollow2D" parent="Saw" unique_id=1851487104]
+position = Vector2(1337.503, 664.5034)
+rotation = -0.030083515
+progress = 880.9009
+loop = false
+script = ExtResource("1_epypp")
+
+[node name="SawSprite" type="Sprite2D" parent="Saw/SawFollow" unique_id=609883292]
+position = Vector2(-101.72429, -193.6508)
+scale = Vector2(10, 10)
+texture = ExtResource("3_rj586")
+script = ExtResource("2_epypp")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1933007173]
+position = Vector2(203, 299)
+script = ExtResource("6_d21ai")
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" unique_id=287139429]
+position = Vector2(15, 0)
+texture = ExtResource("6_kdubu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=335214326]
+position = Vector2(21.75, 3.25)
+shape = SubResource("RectangleShape2D_7mid1")
+
+[node name="Timer" type="Timer" parent="." unique_id=417559432]
+
+[node name="Switch" type="Area2D" parent="Timer" unique_id=842723463]
+
+[node name="Sprite2D" type="Sprite2D" parent="Timer/Switch" unique_id=2023076885]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Timer/Switch" unique_id=33733443]
+
+[node name="RedBlock" type="StaticBody2D" parent="Timer" unique_id=1377838427 groups=["red_blocks"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Timer/RedBlock" unique_id=1729649674]
+
+[node name="Red" type="Sprite2D" parent="Timer/RedBlock" unique_id=1934927423]
+position = Vector2(392, 571)
+scale = Vector2(10, 10)
+texture = ExtResource("7_4d7sh")
+
+[node name="Red2" type="Sprite2D" parent="Timer/RedBlock" unique_id=165513107]
+position = Vector2(354, 731.00006)
+scale = Vector2(10, 10)
+texture = ExtResource("7_4d7sh")
+
+[node name="BlueBlock" type="StaticBody2D" parent="Timer" unique_id=785383824 groups=["blue_blocks"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Timer/BlueBlock" unique_id=210741954]
+
+[node name="Blue" type="Sprite2D" parent="Timer/BlueBlock" unique_id=1518964241]
+position = Vector2(817.00006, 569)
+scale = Vector2(10, 10)
+texture = ExtResource("8_ir8iy")
+
+[node name="Blue2" type="Sprite2D" parent="Timer/BlueBlock" unique_id=16151873]
+position = Vector2(784.00006, 755.00006)
+scale = Vector2(10, 10)
+texture = ExtResource("8_ir8iy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1355141405]
+position = Vector2(207, 235)
+sprite_frames = SubResource("SpriteFrames_ei405")
+frame_progress = 0.52423096
+script = ExtResource("21_7vxoj")
