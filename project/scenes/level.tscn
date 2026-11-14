@@ -7,9 +7,8 @@
 [ext_resource type="TileSet" uid="uid://c8q2q547ppt00" path="res://assets/tileset.tres" id="3_w8frs"]
 [ext_resource type="Texture2D" uid="uid://cqstomgwfgphx" path="res://assets/cloud.png" id="6_2r41h"]
 [ext_resource type="Script" uid="uid://c6fccel11oal6" path="res://followPathSaw.gd" id="7_8c41q"]
-[ext_resource type="Texture2D" uid="uid://c44osk5pch85t" path="res://saw.png" id="8_olg7q"]
-[ext_resource type="Script" uid="uid://bkktj5n84nmjj" path="res://rotateSaw.gd" id="9_t1rx8"]
-[ext_resource type="Script" uid="uid://djpnjrcpr4ord" path="res://scripts/lava.gd" id="10_olg7q"]
+[ext_resource type="PackedScene" uid="uid://bg6sdk0j3ewws" path="res://scenes/saw.tscn" id="8_8c41q"]
+[ext_resource type="Script" uid="uid://cuuesegaxd5tj" path="res://scenes/area_2d.gd" id="10_olg7q"]
 [ext_resource type="AudioStream" uid="uid://b3sgysweayq57" path="res://assets/When-We-Were-Just-Kids.mp3" id="11_t1rx8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xcss6"]
@@ -19,9 +18,6 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 545, 646, 0, 0, 0, 0, 1510, 658, 0, 0, 0, 0, 1623, 650, 0, 0, 0, 0, 1753, 652, 0, 0, 0, 0, 2008, 652)
 }
 point_count = 5
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_xcss6"]
-radius = 12.71927
 
 [node name="Node2D" type="Node2D" unique_id=595287875]
 script = ExtResource("1_h6wmr")
@@ -171,17 +167,8 @@ progress = 880.9009
 loop = false
 script = ExtResource("7_8c41q")
 
-[node name="SawSprite" type="Sprite2D" parent="Saw/SawFollow" unique_id=1784100131]
+[node name="SawSprite" parent="Saw/SawFollow" unique_id=2026854761 instance=ExtResource("8_8c41q")]
 position = Vector2(-126.924194, -6.744995)
-scale = Vector2(10, 10)
-texture = ExtResource("8_olg7q")
-script = ExtResource("9_t1rx8")
-
-[node name="Area2D" type="Area2D" parent="Saw/SawFollow/SawSprite" unique_id=1117076159]
-script = ExtResource("10_olg7q")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Saw/SawFollow/SawSprite/Area2D" unique_id=882055717]
-shape = SubResource("CircleShape2D_xcss6")
 
 [node name="Saw2" type="Path2D" parent="." unique_id=1613979308]
 y_sort_enabled = true
@@ -195,17 +182,8 @@ progress = 880.9009
 loop = false
 script = ExtResource("7_8c41q")
 
-[node name="SawSprite" type="Sprite2D" parent="Saw2/SawFollow" unique_id=1082398908]
-position = Vector2(-126.924194, -6.744995)
-scale = Vector2(10, 10)
-texture = ExtResource("8_olg7q")
-script = ExtResource("9_t1rx8")
-
-[node name="Area2D" type="Area2D" parent="Saw2/SawFollow/SawSprite" unique_id=1339800045]
-script = ExtResource("10_olg7q")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Saw2/SawFollow/SawSprite/Area2D" unique_id=229506784]
-shape = SubResource("CircleShape2D_xcss6")
+[node name="SawSprite2" parent="Saw2/SawFollow" unique_id=442050378 instance=ExtResource("8_8c41q")]
+position = Vector2(434.13226, 619.51544)
 
 [node name="Label" type="Label" parent="Saw2" unique_id=147186166]
 offset_left = 1208.0
@@ -218,5 +196,11 @@ GIVE MONEY TO HACK CLUB OR ELSE"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1427923723]
 stream = ExtResource("11_t1rx8")
 
-[connection signal="body_entered" from="Saw/SawFollow/SawSprite/Area2D" to="Saw/SawFollow/SawSprite/Area2D" method="_on_body_entered"]
-[connection signal="body_entered" from="Saw2/SawFollow/SawSprite/Area2D" to="Saw2/SawFollow/SawSprite/Area2D" method="_on_body_entered"]
+[node name="Area2D" type="Area2D" parent="." unique_id=102493204]
+script = ExtResource("10_olg7q")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1478554214]
+polygon = PackedVector2Array(8661, 1087, 9082, 1094, 9101, 601, 8661, 601)
+
+[connection signal="area_shape_entered" from="Area2D" to="Area2D" method="_on_area_shape_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

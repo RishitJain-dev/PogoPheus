@@ -1,7 +1,10 @@
-[gd_scene format=3 uid="uid://bw7wke3675tff"]
+[gd_scene format=4 uid="uid://bw7wke3675tff"]
 
 [ext_resource type="Texture2D" uid="uid://cl2nq8wjwf6ek" path="res://assets/titlescreen.png" id="1_4ignj"]
 [ext_resource type="Script" uid="uid://bgarq1y2pxsow" path="res://scripts/title.gd" id="1_wosw1"]
+[ext_resource type="Texture2D" uid="uid://cqstomgwfgphx" path="res://assets/cloud.png" id="3_pyl7j"]
+[ext_resource type="Texture2D" uid="uid://ceute6cj26cp1" path="res://assets/orph.png" id="4_4rr2b"]
+[ext_resource type="TileSet" uid="uid://c8q2q547ppt00" path="res://assets/tileset.tres" id="4_b3w7a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xcss6"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -15,7 +18,101 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wosw1")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=422238297]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=761922256]
+visible = false
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=2094473864]
+offset_left = -510.0
+offset_top = -640.0
+offset_right = 9870.0
+offset_bottom = 1720.0
+color = Color(0.33333334, 0.6784314, 0.8352941, 1)
+
+[node name="Parallax2D" type="Parallax2D" parent="CanvasLayer" unique_id=95781668]
+scroll_scale = Vector2(0.1, 0.1)
+
+[node name="Cloud" type="Sprite2D" parent="CanvasLayer/Parallax2D" unique_id=197927909]
+position = Vector2(977, 57)
+scale = Vector2(4, 4)
+texture = ExtResource("3_pyl7j")
+
+[node name="Cloud2" type="Sprite2D" parent="CanvasLayer/Parallax2D" unique_id=1673410553]
+position = Vector2(209, 97)
+rotation = -0.19198622
+scale = Vector2(5, 5)
+texture = ExtResource("3_pyl7j")
+
+[node name="Cloud4" type="Sprite2D" parent="CanvasLayer/Parallax2D" unique_id=246009210]
+position = Vector2(1955.0001, -2.0000343)
+rotation = 0.43633232
+scale = Vector2(5, 5)
+texture = ExtResource("3_pyl7j")
+
+[node name="Cloud5" type="Sprite2D" parent="CanvasLayer/Parallax2D" unique_id=137501145]
+position = Vector2(2346.0005, 128.00002)
+rotation = 0.17453292
+scale = Vector2(4, 4)
+texture = ExtResource("3_pyl7j")
+
+[node name="Cloud8" type="Sprite2D" parent="CanvasLayer/Parallax2D" unique_id=529324742]
+position = Vector2(3566.0002, 206)
+rotation = 0.17453292
+scale = Vector2(4, 4)
+texture = ExtResource("3_pyl7j")
+
+[node name="Cloud9" type="Sprite2D" parent="CanvasLayer/Parallax2D" unique_id=871228550]
+position = Vector2(3961.0005, 44.99997)
+rotation = 0.17453292
+scale = Vector2(8, 8)
+texture = ExtResource("3_pyl7j")
+
+[node name="Cloud6" type="Sprite2D" parent="CanvasLayer/Parallax2D" unique_id=819854244]
+position = Vector2(2552.0002, -38.000015)
+rotation = 0.17453292
+scale = Vector2(4, 4)
+texture = ExtResource("3_pyl7j")
+
+[node name="Cloud10" type="Sprite2D" parent="CanvasLayer/Parallax2D" unique_id=1859958328]
+position = Vector2(4243.0005, 276.00006)
+rotation = -0.24783675
+scale = Vector2(6, 6)
+texture = ExtResource("3_pyl7j")
+
+[node name="Cloud7" type="Sprite2D" parent="CanvasLayer/Parallax2D" unique_id=1654326842]
+position = Vector2(2808.0005, 208.99998)
+rotation = 0.17453292
+scale = Vector2(8, 8)
+texture = ExtResource("3_pyl7j")
+
+[node name="Cloud3" type="Sprite2D" parent="CanvasLayer/Parallax2D" unique_id=1241594704]
+position = Vector2(1425.0001, 109.00003)
+rotation = -0.19198622
+scale = Vector2(7, 7)
+skew = -0.34906584
+texture = ExtResource("3_pyl7j")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="CanvasLayer" unique_id=1010369523]
+position = Vector2(-15, -150)
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAABAAMAAwAAAAAAAAACAAMAAwAAAAAAAAADAAMAAwAAAAAAAAAEAAMAAwAAAAAAAAAAAAQAAwAAAAAAAAABAAQAAwAAAAAAAAADAAQAAwAAAAAAAAAEAAQAAwAAAAAAAAACAAQAAwAAAAAAAAAFAAMAAwAAAAAAAAAGAAMAAwAAAAAAAAAHAAMAAwAAAAAAAAAHAAQAAwAAAAAAAAALAAQAAwAAAAAAAAAMAAQAAwAAAAAAAAAFAAQAAwAAAAAAAAAGAAQAAwAAAAAAAAANAAQAAwAAAAAAAAAIAAUAAwAAAAAAAAAJAAUAAwAAAAAAAAAKAAUAAwAAAAAAAAAKAAYAAwAAAAAAAAALAAYAAwAAAAAAAAALAAUAAwAAAAAAAAAJAAYAAwAAAAAAAAAIAAYAAwAAAAAAAAAHAAYAAwAAAAAAAAAHAAUAAwAAAAAAAAAGAAUAAwAAAAAAAAAFAAUAAwAAAAAAAAAFAAYAAwAAAAAAAAAGAAYAAwAAAAAAAAAAAAUAAwAAAAAAAAABAAUAAwAAAAAAAAABAAYAAwAAAAAAAAACAAYAAwAAAAAAAAADAAYAAwAAAAAAAAADAAUAAwAAAAAAAAAEAAUAAwAAAAAAAAACAAUAAwAAAAAAAAAEAAYAAwAAAAAAAAAAAAYAAwAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAALAAMABgAAAAAAAAAMAAMABwAAAAAAAAANAAMAAwAAAAAAAAAOAAIAAAAAAAAAAAAPAAIAAAAAAAAAAAAQAAIAAAAAAAAAAAAOAAMAAwAAAAAAAAAOAAQAAwAAAAAAAAAOAAUAAwAAAAAAAAAPAAUAAwAAAAAAAAAQAAYAAwAAAAAAAAAQAAUAAwAAAAAAAAAQAAQAAwAAAAAAAAAQAAMAAwAAAAAAAAAPAAMAAwAAAAAAAAAPAAQAAwAAAAAAAAAPAAYAAwAAAAAAAAAOAAYAAwAAAAAAAAARAAMABAAAAAAAAAASAAMAAQAAAAAAAAASAAQAAwAAAAAAAAASAAUAAwAAAAAAAAATAAUAAwAAAAAAAAAUAAUAAwAAAAAAAAAXAAQABgAAAAAAAAAYAAQABwAAAAAAAAAXAAUAAwAAAAAAAAAYAAUAAwAAAAAAAAAYAAYAAwAAAAAAAAAXAAYAAwAAAAAAAAAWAAYAAwAAAAAAAAAVAAYAAwAAAAAAAAAUAAYAAwAAAAAAAAATAAYAAwAAAAAAAAASAAYAAwAAAAAAAAARAAYAAwAAAAAAAAARAAUAAwAAAAAAAAARAAQAAwAAAAAAAAARAAcAAwAAAAAAAAASAAcAAwAAAAAAAAATAAcAAwAAAAAAAAAUAAcAAwAAAAAAAAAVAAcAAwAAAAAAAAAWAAcAAwAAAAAAAAAXAAcAAwAAAAAAAAAYAAcAAwAAAAAAAAATAAQABAAAAAAAAAAWAAUAAwAAAAAAAAANAAIAAAAAAAAAAAAZAAUAAwAAAAAAAAAZAAYAAwAAAAAAAAAaAAYAAwAAAAAAAAAaAAcAAwAAAAAAAAAbAAcAAwAAAAAAAAAcAAcAAwAAAAAAAAAZAAcAAwAAAAAAAAAbAAYAAwAAAAAAAAAcAAgAAwAAAAAAAAAcAAkAAwAAAAAAAAAcAAoAAwAAAAAAAAAbAAoAAwAAAAAAAAAbAAkAAwAAAAAAAAAaAAkAAwAAAAAAAAAaAAgAAwAAAAAAAAAbAAgAAwAAAAAAAAAaAAoAAwAAAAAAAAAdAAoAAwAAAAAAAAAeAAoAAwAAAAAAAAAfAAoAAwAAAAAAAAAfAAkAAwAAAAAAAAAeAAkAAwAAAAAAAAAdAAkAAwAAAAAAAAAgAAoAAwAAAAAAAAAhAAoAAwAAAAAAAAAhAAkAAwAAAAAAAAAiAAkAAwAAAAAAAAAjAAkAAwAAAAAAAAAiAAoAAwAAAAAAAAAgAAkAAwAAAAAAAAAjAAoAAwAAAAAAAAAkAAoAAwAAAAAAAAAhAAgAAwAAAAAAAAAiAAgAAwAAAAAAAAAjAAgAAwAAAAAAAAAjAAcAAwAAAAAAAAAiAAcAAwAAAAAAAAAgAAgAAwAAAAAAAAAaAAUAAAAAAAAAAAAbAAUAAAAAAAAAAAAcAAYAAAAAAAAAAAAZAAQAAAAAAAAAAAAgAAcAAwAAAAAAAAAhAAcAAwAAAAAAAAAiAAYAAAAAAAAAAAAjAAYAAAAAAAAAAAAeAAgAAwAAAAAAAAAfAAgAAwAAAAAAAAAkAAcAAwAAAAAAAAAlAAcAAwAAAAAAAAAmAAcAAwAAAAAAAAAnAAcAAwAAAAAAAAAoAAcAAwAAAAAAAAAnAAgAAwAAAAAAAAAmAAgAAwAAAAAAAAAlAAgAAwAAAAAAAAAkAAgAAwAAAAAAAAAoAAgAAwAAAAAAAAApAAgAAwAAAAAAAAAoAAkAAwAAAAAAAAAnAAkAAwAAAAAAAAAmAAkAAwAAAAAAAAApAAkAAwAAAAAAAAAqAAkAAwAAAAAAAAAnAAoAAwAAAAAAAAAoAAoAAwAAAAAAAAApAAoAAwAAAAAAAAAqAAoAAwAAAAAAAAAuAAoABgAAAAAAAAAvAAoABwAAAAAAAAAwAAoAAwAAAAAAAAAyAAkABwAAAAAAAAAxAAkABgAAAAAAAAAzAAkAAwAAAAAAAAAxAAoAAwAAAAAAAAAyAAoAAwAAAAAAAAAzAAoAAwAAAAAAAAApAAsAAwAAAAAAAAAqAAsAAwAAAAAAAAArAAsAAwAAAAAAAAAsAAsAAwAAAAAAAAAtAAsAAwAAAAAAAAAuAAsAAwAAAAAAAAAvAAsAAwAAAAAAAAAwAAsAAwAAAAAAAAAxAAsAAwAAAAAAAAAyAAsAAwAAAAAAAAAzAAsAAwAAAAAAAAAkAAYAAAAAAAAAAAAlAAYAAAAAAAAAAAAmAAYAAAAAAAAAAAAnAAYAAAAAAAAAAAAoAAYAAAAAAAAAAAApAAcAAAAAAAAAAAAqAAgAAAAAAAAAAAAwAAkAAAAAAAAAAAAzAAgAAAAAAAAAAAAdAAgAAwAAAAAAAAAdAAcAAwAAAAAAAAAeAAcAAwAAAAAAAAAfAAcAAwAAAAAAAAAdAAYAAAAAAAAAAAAeAAYAAAAAAAAAAAAfAAYAAAAAAAAAAAAgAAYAAAAAAAAAAAAhAAYAAAAAAAAAAAAKAAQAAwAAAAAAAAA0AAsAAwAAAAAAAAA0AAoAAwAAAAAAAAA0AAkAAwAAAAAAAAA1AAkAAwAAAAAAAAA2AAkAAwAAAAAAAAA3AAkAAwAAAAAAAAA4AAkAAwAAAAAAAAA5AAkAAwAAAAAAAAA6AAkAAwAAAAAAAAA7AAkAAwAAAAAAAAA8AAkAAwAAAAAAAAA9AAkAAwAAAAAAAAA9AAoAAwAAAAAAAAA9AAsAAwAAAAAAAAA8AAsAAwAAAAAAAAA7AAsAAwAAAAAAAAA6AAsAAwAAAAAAAAA5AAsAAwAAAAAAAAA4AAsAAwAAAAAAAAA3AAsAAwAAAAAAAAA2AAsAAwAAAAAAAAA1AAsAAwAAAAAAAAA1AAoAAwAAAAAAAAA2AAoAAwAAAAAAAAA3AAoAAwAAAAAAAAA4AAoAAwAAAAAAAAA5AAoAAwAAAAAAAAA6AAoAAwAAAAAAAAA7AAoAAwAAAAAAAAA8AAoAAwAAAAAAAAA+AAkAAwAAAAAAAAA+AAoAAwAAAAAAAAA+AAsAAwAAAAAAAAA/AAoAAwAAAAAAAABAAAoAAwAAAAAAAABBAAoAAwAAAAAAAABBAAsAAwAAAAAAAABAAAsAAwAAAAAAAAA/AAsAAwAAAAAAAABCAAsAAwAAAAAAAABCAAoAAwAAAAAAAABCAAkAAwAAAAAAAABDAAkAAwAAAAAAAABEAAkAAwAAAAAAAABFAAoAAwAAAAAAAABGAAoAAwAAAAAAAABFAAsAAwAAAAAAAABEAAoAAwAAAAAAAABDAAoAAwAAAAAAAABDAAsAAwAAAAAAAABEAAsAAwAAAAAAAABFAAkAAwAAAAAAAABGAAkAAwAAAAAAAABGAAsAAwAAAAAAAABCAAgAAAAAAAAAAABDAAgAAAAAAAAAAABEAAgAAAAAAAAAAABFAAgAAAAAAAAAAABGAAgAAAAAAAAAAAAMAAYAAwAAAAAAAAANAAYAAwAAAAAAAAAMAAUAAwAAAAAAAAANAAUAAwAAAAAAAAA=")
+tile_set = ExtResource("4_b3w7a")
+rendering_quadrant_size = 32
+collision_enabled = false
+physics_quadrant_size = 32
+
+[node name="Orph" type="Sprite2D" parent="CanvasLayer" unique_id=987576614]
+position = Vector2(285, 150)
+scale = Vector2(4, 4)
+texture = ExtResource("4_4rr2b")
+
+[node name="Layer" type="Control" parent="." unique_id=1846352425]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Layer" unique_id=422238297]
 layout_mode = 1
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -23,7 +120,7 @@ texture = ExtResource("1_4ignj")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Button" type="Button" parent="." unique_id=760372287]
+[node name="Button" type="Button" parent="Layer" unique_id=760372287]
 layout_mode = 0
 offset_left = 476.0
 offset_top = 421.0
@@ -31,7 +128,7 @@ offset_right = 679.0
 offset_bottom = 491.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_xcss6")
 
-[node name="Button2" type="Button" parent="." unique_id=31205670]
+[node name="Button2" type="Button" parent="Layer" unique_id=31205670]
 layout_mode = 0
 offset_left = 476.0
 offset_top = 500.0
@@ -39,5 +136,5 @@ offset_right = 679.0
 offset_bottom = 570.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_xcss6")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Layer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Layer/Button2" to="." method="_on_button_2_pressed"]

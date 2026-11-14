@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bg6sdk0j3ewws"]
+
+[ext_resource type="Texture2D" uid="uid://c44osk5pch85t" path="res://saw.png" id="1_846d5"]
+[ext_resource type="Script" uid="uid://bkktj5n84nmjj" path="res://rotateSaw.gd" id="2_161w5"]
+[ext_resource type="Script" uid="uid://djpnjrcpr4ord" path="res://scripts/lava.gd" id="3_cxxip"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xcss6"]
+radius = 8.5
+
+[node name="SawSprite" type="Sprite2D" unique_id=2026854761]
+scale = Vector2(10, 10)
+texture = ExtResource("1_846d5")
+script = ExtResource("2_161w5")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=626767198]
+script = ExtResource("3_cxxip")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1466044291]
+shape = SubResource("CircleShape2D_xcss6")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
