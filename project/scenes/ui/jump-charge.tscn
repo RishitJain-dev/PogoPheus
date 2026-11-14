@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://7rpj3fsrkwky"]
 
 [ext_resource type="Script" uid="uid://dahdohpskyq30" path="res://scripts/jump_progress.gd" id="1_xropf"]
+[ext_resource type="FontFile" uid="uid://cofu0blqtv5qi" path="res://misc/font/PixelifySans-VariableFont_wght.ttf" id="2_rijtg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okxts"]
 bg_color = Color(0.0100903, 0.010090303, 0.0100902915, 1)
@@ -8,7 +9,7 @@ bg_color = Color(0.0100903, 0.010090303, 0.0100902915, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xropf"]
 bg_color = Color(0.23921569, 1, 0, 1)
 
-[node name="ProgressBar" type="Control" unique_id=519357473 node_paths=PackedStringArray("progress_bar")]
+[node name="ProgressBar" type="Control" unique_id=519357473 node_paths=PackedStringArray("progress_bar", "label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,6 +19,7 @@ grow_vertical = 2
 size_flags_vertical = 0
 script = ExtResource("1_xropf")
 progress_bar = NodePath("MarginContainer/HBoxContainer/ProgressBar")
+label = NodePath("MarginContainer/HBoxContainer/Label")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=204802787]
 layout_mode = 1
@@ -28,13 +30,20 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_top = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=539327538]
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1819830690]
 layout_mode = 2
-alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1626030511]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rijtg")
+theme_override_font_sizes/font_size = 50
+text = "Still Surviving"
+horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer/HBoxContainer" unique_id=116087269]
 custom_minimum_size = Vector2(200, 20)
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_styles/background = SubResource("StyleBoxFlat_okxts")
 theme_override_styles/fill = SubResource("StyleBoxFlat_xropf")
 value = 7.0

@@ -6,12 +6,24 @@ extends CharacterBody2D
 @export var movement_speed: float = 40
 @export var max_speed: float = 900
 @export var progress_bar: Control
-
+var initial_position
 var jump_charge_progress: int = 0
 signal physics_processed
+var kill_count: int = 0
 
+
+func _ready() -> void:
+	initial_position  = position
 func is_positive(num: int) ->bool:
 	return num >= 0
+
+func set_deaths_counter(deaths: int) -> void:
+	if deaths == 0:
+		progress_bar.set_text("Still Surviving")
+	elif deaths == 1:
+		progress_bar.set_text("1 Death")
+	else:
+		progress_bar.set_text(str(deaths) + " Deaths")
 func _physics_process(delta: float) -> void:
 	#y axis
 	var velocity_initial: int = velocity.y
@@ -31,7 +43,10 @@ func _physics_process(delta: float) -> void:
 				#velocity.y = -5
 		
 	velocity.y += 9.81 # gravity
-	
+	if velocity.y > max_speed:
+		velocity.y = max_speed
+	elif velocity.y < -max_speed:
+		velocity.y = -max_speed
 	# x axis
 	
 	
@@ -58,7 +73,7 @@ func _physics_process(delta: float) -> void:
 			jump_charge_progress = 0
 	progress_bar.set_value(jump_charge_progress)
 	
-	if is_positive(velocity.y) != is_positive(velocity_initial): #changing from moving down to up
+	if !is_positive(velocity.y) and is_positive(velocity_initial): #changing from moving down to up
 		if !Input.is_action_pressed("space") and jump_charge_progress!=0:
 			velocity.y *= sqrt(1.5*jump_charge_progress)
 		jump_charge_progress = 0
@@ -77,3 +92,8 @@ func _physics_process(delta: float) -> void:
 			#velocity.x = -max_speed
 	move_and_slide()
 	physics_processed.emit()
+
+func kill() -> void:
+	kill_count += 1
+	set_deaths_counter(kill_count)
+	position = initial_position
